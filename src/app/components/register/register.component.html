@@ -1,0 +1,86 @@
+<div class="outer-container">
+
+    <div class="register-container">
+        <form class="form-container" [formGroup]="registerForm">
+
+            <div class="cnt1">
+                <div style="color: #FCC209;">Fundo</div>
+                <div>Create your Fundo Account</div>
+            </div>
+
+            <div class="cnt2">
+                <mat-form-field  appearance="outline"  >
+                    <input matInput  placeholder="First Name*" formControlName="firstName">
+                    <mat-error *ngIf="submitted && formValidation['firstName']?.hasError('required')">First name required</mat-error>
+                    <mat-error *ngIf="submitted && formValidation['firstName']?.hasError('pattern')">First letter should be in caps</mat-error>
+
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline"  >
+                    <input matInput  placeholder="Last Name*" formControlName="lastName">
+                    <mat-error *ngIf="submitted && formValidation['lastName']?.hasError('required')">Last name required</mat-error>
+                    <mat-error *ngIf="submitted && formValidation['lastName']?.hasError('pattern')">First letter should be in caps</mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="cnt3">
+                <mat-form-field  appearance="outline"  >
+                    <input matInput  placeholder="UserName*" formControlName="email">
+                    <mat-error *ngIf="submitted && formValidation['email']?.hasError('required')">Email required</mat-error>
+                    <mat-error *ngIf="submitted && formValidation['email']?.hasError('email')">Enter valid Email</mat-error>
+                </mat-form-field>
+            </div>
+
+            
+            <div class="cnt4">
+                <mat-form-field  appearance="outline"  >
+                    <input matInput  placeholder="Password**" type="password" formControlName="password">
+                    <mat-error *ngIf="submitted && formValidation['password']?.hasError('required')" >password required</mat-error>
+                    <mat-error *ngIf="submitted && formValidation['password']?.hasError('minlength')">Password minimum length should be 6</mat-error>
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline"  >
+                    <input matInput  placeholder="Confirm*" type="password" formControlName="confirmPassword">
+                    <mat-error *ngIf="submitted && formValidation['confirmPassword']?.hasError('required')">password required</mat-error>
+                    <mat-error *ngIf="!passwordValid "><div>no match</div></mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="cnt5">
+                <button mat-button style="font-weight: bold; padding: 0%;">Sign in instead</button>
+                <button mat-stroked-button  (click)="handleRegister()" style="font-weight: bold;background-color: #3F51B5;color: white;">Register</button>
+            </div>
+        </form>
+       
+
+
+        <div class="image-container">
+            <img class="image" src="assets/register_image.jpg" alt="no Photo">
+            <div class="image-footer-text">
+                <span>One account.All of Fundo</span>
+                <span>working for you.</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="register-footer" >
+
+        <div class="fcnt1">
+            <mat-form-field>
+                <mat-select [(value)]="selectedCountry">
+                    <mat-option></mat-option>
+                    <mat-option *ngFor="let option of countrys" [value]="option.value">{{ option.viewValue }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="fcnt2">
+           <span>Help</span>
+           <span>Privacy</span>
+           <span>Terms</span>
+        </div>
+
+    </div>
+
+</div>

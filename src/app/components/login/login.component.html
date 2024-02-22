@@ -1,0 +1,105 @@
+<div style="display: flex; flex-direction:column; align-items: center; justify-content: center; width:100% ;height: 100vh;" >    
+    <form class="login-container" name="form" [formGroup]="loginForm" > 
+
+
+        <div class="cnt1">
+            <span style="color: #FCC209;font-size: 23px;">Fundo</span>
+            <span style="font-size: 23px;">Sign in</span>
+            <span style="font-size: 17px;">Use your Fundo Account</span>
+        </div>
+
+        <div class="cnt2" >
+            <mat-form-field  appearance="outline"  >
+                <input matInput  placeholder="Email or phone*"  formControlName="email" >
+                <mat-error *ngIf="submitted && formValidation['email']?.hasError('required')">Email required</mat-error>
+                <mat-error *ngIf="submitted && formValidation['email']?.hasError('email')">Enter valid Email</mat-error>
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" >
+                <input matInput placeholder="Password*" type="password" formControlName="password">
+                <mat-error *ngIf="submitted && formValidation['password']?.hasError('required')">password required</mat-error>
+                <mat-error *ngIf="submitted && formValidation['password']?.hasError('minlength')">Password minimum length should be 6</mat-error>
+            </mat-form-field>
+
+            <button mat-button style="font-weight: bold;color: #3F51B5;">Forget password</button>
+        </div>
+
+        <div class="cnt3">
+        </div>
+
+        <div class="cnt4">
+            <button mat-button style="font-weight: bold;">Create account</button>
+            <button mat-stroked-button (click)="handleLogin()"  style="font-weight: bold;background-color: #3F51B5;color: white;">Login</button>
+        </div>
+     
+    </form>
+
+
+
+    <div class="login-footer" >
+
+        <div class="fcnt1">
+            <mat-form-field>
+                <mat-select [(value)]="selectedCountry">
+                    <mat-option></mat-option>
+                    <mat-option *ngFor="let option of countrys" [value]="option.value">{{ option.viewValue }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="fcnt2">
+           <span>Help</span>
+           <span>Privacy</span>
+           <span>Terms</span>
+        </div>
+
+    </div>
+   
+</div>  
+
+
+
+
+
+
+<!-- 
+ <div class="login-footer-main-cnt">
+    <form class="login-outer-cnt" >
+
+        <div class="title-subtitle-cnt">  
+            <span class="title-subtitle-cnt-title-1">Fundoo</span>
+            <span class="title-subtitle-cnt-title-2">Sign in</span>
+            <span>Use Your Fundoo Account</span>
+        </div>
+    
+        <mat-form-field appearance="outline" class="login-form-input">
+            <mat-label>Email id</mat-label>
+            <input formControlName="emailId" matInput placeholder="Email id">
+        <mat-error *ngIf="submitted && loginControl['emailId']?.hasError('required')">Email Required</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="login-form-input">
+            <mat-label>Password</mat-label>
+            <input formControlName="password"  matInput placeholder="Password">
+            <mat-error *ngIf="submitted && loginControl['password']?.hasError('required')">password Required</mat-error>
+          </mat-form-field>
+        <button mat-button color="primary" class="login-forgot-btn">Forgot Password</button>
+    
+        <div class="login-footer-btn-ctn">
+            <button mat-button color="primary" >Create Account</button>
+    
+            <button mat-raised-button color="primary">Login</button>
+        </div>
+        (click)="handleLogin()"
+        
+    </form>
+    
+    <div class="login-footer-cnt">
+        <span>Help</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+    </div>
+</div>
+ -->
+
+
+

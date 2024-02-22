@@ -1,0 +1,36 @@
+<mat-drawer-container  [hasBackdrop]="false" >
+    <mat-drawer #drawer [mode]="'over'" [opened]="drawerState" >
+        <div class="sidenav-container">
+        <div class="icons">
+            <mat-icon svgIcon="note-icon" aria-hidden="false" aria-label="note SVG icon"></mat-icon>
+            <span routerLink="/dashboard/notes">Notes</span>
+        </div >
+
+        <div class="icons">
+            <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="remember SVG icon"></mat-icon>
+            <span routerLink="">Reminder</span>
+        </div>
+
+        <div class="icons">
+            <mat-icon svgIcon="edit-icon" aria-hidden="false" aria-label="edit SVG icon"></mat-icon>
+            <span routerLink="">Archive</span>
+        </div>
+
+        <div class="icons">
+            <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="archive SVG icon"></mat-icon>
+            <span routerLink="/dashboard/archive">Archive</span>
+        </div>
+
+        <div class="icons">
+            <mat-icon svgIcon="bin-icon" aria-hidden="false" aria-label="bin SVG icon"></mat-icon>
+            <span routerLink="">Trash</span>
+        </div >
+    </div>
+    </mat-drawer>
+    <mat-drawer-content>
+     <router-outlet></router-outlet>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  

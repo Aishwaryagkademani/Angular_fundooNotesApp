@@ -1,0 +1,296 @@
+// .create-note-container{
+//     // border: 1px solid black;
+//     display: flex;
+//     width: 100%;
+//     height: 10px;
+//     justify-content: space-between;
+//     align-items: center;
+    
+// // box-shadow: 1px 1px 1px 3px   rgba(206, 201, 201, 0.45),
+// // 1px 1px 1px 3px  rgba(206, 201, 201, 0.45),
+// // 1px 1px 1px 3px   rgba(206, 201, 201, 0.45),
+// // 1px 1px 1px 3px  rgba(206, 201, 201, 0.45);
+
+    
+// }
+
+// .in{
+//     &:focus-visible {
+//         border: none;
+//      outline: 0px !important;}
+     
+//         border: none;
+        
+     
+// }
+
+// .icons{
+// width: 20%;
+// display: flex;
+// justify-content: space-between;
+   
+// }
+//  mat-icon{
+//         width: 18px;
+//     }
+
+// .create-note-container2{
+//     // border: 1px solid black;
+//     display: flex;
+//     flex-direction: column;
+//     width: 100%;
+//     // height: 10px;
+//     gap: 20px;
+//     padding: 10px;
+//     .icon-space{
+//         display: flex;
+//             // border: 1px solid black;
+//             align-items: center;
+//             justify-content: space-between;
+//     }
+
+// }
+
+// .icons2{
+//     width: 70%;
+//     display: flex;
+//     // border: 1px solid black;
+//     justify-content: flex-start;
+//     gap: 40px;
+
+// }
+
+
+
+.takenotes-main-cnt{
+    height: 35px;
+    padding: 5px;
+    width: 620px;
+    display: flex;
+    gap: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-left: 229px;
+    background-color: #d1d4d6;
+    border: 1px solid #f1f1f1;
+    
+}
+
+.takenotes-input{
+    background-color: #d1d4d6;
+    color:#a09c9c;
+    font-weight: 200;
+    font-size: 18px;
+    border: none;
+    outline: none;
+}
+.takenotes-inner-cnt{
+    height: 43px;
+    display: flex;
+    gap:50px;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+
+//after clicking the input
+
+
+.takenotes-main-cnth{
+    width: 631px;
+    height: max-content;
+    padding: 5px;
+    // border: 1px solid #949494;
+    background-color: #d1d4d6;
+    border-radius: 5px;
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    margin-left: 227px;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+ 
+ 
+
+.takenote-input-1-cnt{
+    height: max-content;
+    width: 620px;
+    display: flex;
+}
+
+.takenote-inputs-1{
+    width: 620px; 
+    height: max-content;
+    word-wrap: break-word;
+    background-color: transparent;
+    color:#171518;
+
+    border: none;
+    outline: none;
+    font-size: larger;
+    font-weight: 600;
+    margin-top: 12px;
+    margin-left: 10px;
+}
+.takenote-inputs-2{
+    width: 612px; 
+    height: max-content;
+    word-wrap: break-word;
+    background-color: transparent;
+    color:#171518;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    border: none;
+    outline: none;
+    font-size: larger;
+    font-weight: 500;
+    margin-top: 12px;
+    margin-left: 10px;
+
+
+ 
+}
+.takenotes-icon-main-cnt{
+    display: flex;
+    gap:40px;
+    margin-top: 12px;
+    margin-left: 10px;
+    
+   
+}
+.takenotes-icon-cnt{
+    display: flex;
+    align-items: center;
+    gap:40px;
+    justify-content: center;
+   
+}
+.takenotes-undo-icon{
+    display: flex;
+    gap: 30px;
+}
+.takenotes-close-btn{
+    margin-left: 68px;
+    color: rgb(38, 36, 36);
+    font-size: larger;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+//color palate 
+.col1{
+    background-color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1PX solid black;
+}
+.col2{
+    background-color: #FAAFA8;
+    border: 1px solid #FAAFA8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col3{
+    background-color: #F39F76;
+    border: 1px solid #F39F76;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col4{
+    background-color: #FFF8B8;
+    border: 1px solid #FFF8B8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col5{
+    background-color: #E2F6D3;
+    border: 1px solid #E2F6D3;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col6{
+    background-color: #B4DDD3;
+    border: 1px solid #B4DDD3;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col7{
+    background-color: #D4E4ED;
+    border: 1px solid #D4E4ED;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col8{
+    background-color: #AECCDC;
+    border: 1px solid #AECCDC;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col9{
+    background-color: #D3BFDB;
+    border: 1px solid #D3BFDB;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col10{
+    background-color: #F6E2DD;
+    border: 1px solid #F6E2DD;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col11{
+    background-color: #E9E3D4;
+    border: 1px solid #E9E3D4;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.col12{
+    background-color: #EFEFF1;
+    border: 1px solid #EFEFF1;
+     width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+
+.color-palate-cnt{
+    border: 2px solid rgb(236, 190, 190);
+    width: 150px;
+    height: 140px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    // border-top-left-radius: 40%;
+    // border-bottom-right-radius: 40%;
+}

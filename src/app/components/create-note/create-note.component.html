@@ -1,0 +1,111 @@
+<!-- <div style="width:100% ;height:50px ;">
+
+    <mat-card class="create-note-container"  (click)="handleOnclick()" *ngIf="click ;else elseBlock"  >        
+        <input class="in"  placeholder="Take a note"  style="font-size: 16px;" >
+        <div class="icons" >
+            <mat-icon svgIcon="tick-icon" aria-hidden="false" aria-label="tick SVG icon"></mat-icon>
+            <mat-icon svgIcon="brush-icon" aria-hidden="false" aria-label="brush SVG icon"></mat-icon>
+           <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="img SVG icon"></mat-icon>
+        </div>
+    </mat-card>
+</div>
+
+<ng-template #elseBlock  (onblur)="handleOnblur()">
+    <mat-card class="create-note-container2"   (focusout)="handleOnblur()">        
+        <input class="in" style="font-size: 16px;" placeholder="Title"  >
+        <input class="in"  placeholder="Description"  >
+        <div class="icon-space">
+            <div class="icons2" >
+                <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="remember SVG icon"></mat-icon>
+               <mat-icon svgIcon="collaborator-icon" aria-hidden="false" aria-label="collaborator SVG icon"></mat-icon>
+               <mat-icon svgIcon="color-plate-icon" aria-hidden="false" aria-label="color plate SVG icon"></mat-icon>
+               <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="img SVG icon"></mat-icon>
+               <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="archive SVG icon"></mat-icon>
+               <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="more SVG icon"></mat-icon>
+               <mat-icon svgIcon="undo-icon" aria-hidden="false" aria-label="undo SVG icon"></mat-icon>
+               <mat-icon svgIcon="redo-icon" aria-hidden="false" aria-label="redo SVG icon"></mat-icon>
+            </div>
+            <button mat-button>Close</button>
+        </div>
+    </mat-card>
+</ng-template> -->
+
+
+
+
+<div class="create-cnt-1">
+
+    <div class="takenotes-main-cnt" *ngIf="clickToggle else open"  (click)="handleCreateNote('open')">
+          <input class="takenotes-input" placeholder="Take a note..." style="width:500px; " />
+          <div class="takenotes-inner-cnt"  style="background-color: transparent;">
+              <mat-icon svgIcon="tick-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+              <mat-icon svgIcon="brush-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+              <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+          </div>
+      </div>
+  </div>
+  
+  <div class="create-cnt-2" >
+      <ng-template #open>
+          <div class="takenotes-main-cnth"[style.background-color]="color">
+            <div class="takenote-input-1-cnt">
+                <input class="takenote-inputs-1"  placeholder="Title" [(ngModel)]="title">
+                <!-- <mat-icon svgIcon="pin-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon> -->
+              </div>
+            <div>
+                <textarea class="takenote-inputs-2" placeholder="Take notes"style="width:90%;word-wrap: break-word;" [(ngModel)]="description" ></textarea>
+            </div>
+
+            <div class="takenotes-icon-main-cnt" >
+                <div class="takenotes-icon-cnt">
+                    <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="remember SVG icon"></mat-icon>
+                    <mat-icon svgIcon="collaborator-icon" aria-hidden="false" aria-label="collaborator SVG icon"></mat-icon>
+                    <mat-icon svgIcon="color-plate-icon" [matMenuTriggerFor]="colorMenu" aria-hidden="false" aria-label="color plate SVG icon"></mat-icon>
+                    <mat-icon svgIcon="img-icon"  aria-hidden="false" aria-label="img SVG icon"></mat-icon>
+                        <mat-menu #colorMenu="matMenu" >
+                            <div class="color-palate-cnt">    
+                                <div class="col1" matTooltip="Default" (click)="handleCreateNoteIconsClick('#FFFFFF')"></div>
+                                <div class="col2" matTooltip="Coral" (click)="handleCreateNoteIconsClick('#FAAFA8')"></div>
+                                <div class="col3" matTooltip="Peach" (click)="handleCreateNoteIconsClick('#F39F76')"></div>
+                                <div class="col4" matTooltip="Sand" (click)="handleCreateNoteIconsClick('#FFF8B8')"></div>
+                                <div class="col5" matTooltip="Mint" (click)="handleCreateNoteIconsClick('#E2F6D3')"></div>
+                                <div class="col6" matTooltip="Sage" (click)="handleCreateNoteIconsClick('#B4DDD3')"></div>
+                                <div class="col7" matTooltip="Fog" (click)="handleCreateNoteIconsClick('#D4E4ED')"></div>
+                                <div class="col8" matTooltip="Storm" (click)="handleCreateNoteIconsClick('#AECCDC')"></div>
+                                <div class="col9" matTooltip="Dusk" (click)="handleCreateNoteIconsClick('#D3BFDB')"></div>
+                                <div class="col10" matTooltip="Blossom" (click)="handleCreateNoteIconsClick('#F6E2DD')"></div>
+                                <div class="col11" matTooltip="Clay" (click)="handleCreateNoteIconsClick('#E9E3D4')"></div>
+                                <div class="col12" matTooltip="Chalk" (click)="handleCreateNoteIconsClick('#EFEFF1')"></div>           
+                            </div>
+                        </mat-menu>
+                    
+                    <mat-icon svgIcon="archive-icon" (click)="handleCreateNoteIconsClick('archive')" aria-hidden="false" aria-label="archive SVG icon  "></mat-icon>
+                    <mat-icon svgIcon="more-icon" [matMenuTriggerFor]="moreMenu" aria-hidden="false" aria-label="more SVG icon"></mat-icon>
+                </div>
+
+                <!-- menu code to more icon -->
+                <mat-menu #moreMenu="matMenu">
+                    <button mat-menu-item (click)="handleCreateNoteIconsClick('trash')">
+                      <span  >trash</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                      <span>Check voice mail</span>
+                    </button>
+                    <button mat-menu-item>
+                      <span>Disable alerts</span>
+                    </button>
+                  </mat-menu>
+
+                   <div class="takenotes-undo-icon" >
+                    <mat-icon svgIcon="undo-icon" aria-hidden="false" aria-label="undo SVG icon"></mat-icon>
+                    <mat-icon svgIcon="redo-icon" aria-hidden="false" aria-label="redo SVG icon"></mat-icon>
+      
+                </div>
+                <div class="takenotes-close-btn"  (click)="handleCreateNote('close')">Close</div>
+            </div>
+        </div>
+         </ng-template>
+
+
+      
+  </div>
