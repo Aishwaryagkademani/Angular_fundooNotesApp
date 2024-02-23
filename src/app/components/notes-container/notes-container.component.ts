@@ -33,7 +33,6 @@ export class NotesContainerComponent implements OnInit {
     this.notesService.getAllNotes().subscribe((res:NoteObj[])=>
       {
         this.notesList=res.filter((ele) => !ele.isArchive && !ele.isTrash)
-        console.log(this.notesList.length);
 
       })
   }
@@ -44,15 +43,16 @@ export class NotesContainerComponent implements OnInit {
       this.notesList=[$event.data,...this.notesList]
     }
 
-    else if($event.action=="archive"){
-      this.notesService.updateArchive($event.data.noteId).subscribe(res=>console.log(res)
-      );
+    else if($event.action=="archive" || $event.action=="trash"){
+      
       this.notesList=this.notesList.filter((ele) => ele.noteId != $event.data.noteId);      
     }
-    else if($event.action=="trash"){
-      this.notesList=this.notesList.filter((ele)=>ele.noteId !=$event.data.noteId)
+    else{
+      this.notesList=this.notesList.map(ele => {
+        if(ele.noteId == $event.data.noteId) return $event.data
+        return ele
+      })
     }
-    // console.log($event);
     
   }
 

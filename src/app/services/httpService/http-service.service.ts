@@ -37,8 +37,20 @@ export class HttpServiceService {
   }
 
   updateArchiveApiCall(endPoint:string,noteId:number):Observable<any>{
-    // console.log(noteId);
-    const data={"noteId":noteId}
-    return this.http.put(this.baseUrl+endPoint,noteId,{headers:this.header})
+    return this.http.put(this.baseUrl+endPoint+`?noteId=`+noteId,"",{headers:this.header})//https://localhost:7082/api/Notes/UpdateArchive?noteId=4
+  }
+
+  updateTrashApiCall(endPoint:string,noteId:number):Observable<any>{
+    return this.http.put(this.baseUrl+endPoint+`?noteId=`+noteId,"",{headers:this.header})
+  }
+
+  updateColorApiCall(endPoint:string,noteId:number,color:string):Observable<any>{
+    const encodedColor = encodeURIComponent(color);
+
+    return this.http.put(this.baseUrl+endPoint+`?noteId=`+noteId+`&color=`+encodedColor,"",{headers:this.header})
+  }
+
+  DeleteNoteApiCall(endPoint:string,noteId:number):Observable<any>{
+    return this.http.delete(this.baseUrl+endPoint+`?noteId=`+noteId,{headers:this.header})
   }
 }

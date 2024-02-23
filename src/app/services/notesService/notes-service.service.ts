@@ -21,5 +21,15 @@ export class NotesServiceService {
     return this.httpService.updateArchiveApiCall("Notes/UpdateArchive",noteId)
   }
 
-  
+  updateTrash(noteId:number){
+    return this.httpService.updateTrashApiCall("Notes/UpdateTrash",noteId)
+  }
+
+  updateColor(noteId:number,color:string){
+    return this.httpService.updateColorApiCall("Notes/UpdateColor",noteId,color)
+  }
+
+  deleteNote(noteId:number){
+    return this.httpService.DeleteNoteApiCall("Notes/DeleteNotebyId",noteId)
+  }
 }
