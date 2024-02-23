@@ -5,7 +5,7 @@
     // border-top: 1px solid rgb(175, 170, 170);;
     display: flex;
     gap: 50px;
-    padding: 10px;
+    padding: 10px 0px;
 }
 
 .cnt1{
@@ -69,4 +69,19 @@
 .image{
     width: 34px;
     height: 35px;
+}
+
+.user-logo{
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    // margin-left: 40px;
+}
+
+.end-cnt{
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }

@@ -28,6 +28,7 @@ import { TrashContainerComponent } from './components/trash-container/trash-cont
 import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';
 import { FundooHeaderComponent } from './components/fundoo-header/fundoo-header.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { SearchNotePipe } from './components/pipe/search-note.pipe';
 
 @NgModule({ 
   declarations: [
@@ -42,6 +43,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     DashboardLayoutComponent,
     FundooHeaderComponent,
     SideNavComponent,
+    SearchNotePipe,
   
   ],
   imports: [

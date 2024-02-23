@@ -30,6 +30,10 @@ export class NotesServiceService {
   }
 
   deleteNote(noteId:number){
-    return this.httpService.DeleteNoteApiCall("Notes/DeleteNotebyId",noteId)
+    return this.httpService.deleteNoteApiCall("Notes/DeleteNotebyId",noteId)
+  }
+
+  editNote(data:object){
+    return this.httpService.editNoteApiCall("Notes/updatenote",data)
   }
 }

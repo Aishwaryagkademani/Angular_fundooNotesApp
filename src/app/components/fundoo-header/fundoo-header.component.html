@@ -8,11 +8,11 @@
             <img class="image" src="assets\google-keep-icon.webp" alt="no image">
             <span style="font-size: 22px; color:black; font-family: Roboto, 'Helvetica Neue', sans-serif;">Fundoo</span>
         </div>  
-    </div>
+    </div> 
 
     <div class="search-container">
         <mat-icon svgIcon="search-icon" aria-hidden="false" aria-label="search SVG icon"></mat-icon>
-        <input type="text" class="in" placeholder="Search">
+        <input type="text" class="in" placeholder="Search" [(ngModel)]="searchText" (input)="updateSearchText()">
     </div>
     
     <div class="cnt2">
@@ -20,6 +20,10 @@
         <mat-icon svgIcon="listView-icon" aria-hidden="false" aria-label="search SVG icon"></mat-icon>
         <mat-icon svgIcon="setting-icon" aria-hidden="false" aria-label="search SVG icon"></mat-icon>
 
+    </div>
+    <div class="end-cnt">
+        <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="more SVG icon"></mat-icon>
+        <img src="assets\user-logo.png" alt="no image" class="user-logo">
     </div>
 
 </div>

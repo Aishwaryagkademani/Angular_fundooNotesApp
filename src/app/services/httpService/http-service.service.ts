@@ -50,7 +50,12 @@ export class HttpServiceService {
     return this.http.put(this.baseUrl+endPoint+`?noteId=`+noteId+`&color=`+encodedColor,"",{headers:this.header})
   }
 
-  DeleteNoteApiCall(endPoint:string,noteId:number):Observable<any>{
+  deleteNoteApiCall(endPoint:string,noteId:number):Observable<any>{
     return this.http.delete(this.baseUrl+endPoint+`?noteId=`+noteId,{headers:this.header})
   }
+
+  editNoteApiCall(endPoint:string,data:object):Observable<any>{
+    return this.http.put(this.baseUrl+endPoint,data,{headers:this.header})
+  }
+  
 }

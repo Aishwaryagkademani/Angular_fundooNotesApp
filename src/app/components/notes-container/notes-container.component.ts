@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesServiceService } from '../../services/notesService/notes-service.service';
+import DataService from 'src/app/services/dataService/data.service';
 interface NoteObj {
   "noteId":number,
   "title": string,
@@ -17,6 +18,8 @@ interface NoteObj {
 })
 export class NotesContainerComponent implements OnInit {
 
+  searchText!:string;
+
   notesList:NoteObj[]=[{
   "noteId":0,
   "title": "",
@@ -26,7 +29,7 @@ export class NotesContainerComponent implements OnInit {
   "isArchive": false,
   "isPinned": false,
   "isTrash": false,}];
-  constructor(private notesService:NotesServiceService) { }
+  constructor(private notesService:NotesServiceService,private data:DataService) { }
 
   ngOnInit(): void {
 
@@ -35,6 +38,8 @@ export class NotesContainerComponent implements OnInit {
         this.notesList=res.filter((ele) => !ele.isArchive && !ele.isTrash)
 
       })
+
+      this.data.currentSearchText.subscribe(state=>this.searchText=state);
   }
 
   updateNotesList($event: {data:NoteObj,action:string}){

@@ -8,6 +8,7 @@ import { DashboardLayoutComponent } from './components/dashboard-layout/dashboar
 import { NotesContainerComponent } from './components/notes-container/notes-container.component';
 import { ArchiveContainerComponent } from './components/archive-container/archive-container.component';
 import { TrashContainerComponent } from './components/trash-container/trash-container.component';
+import { AuthGardService } from './services/authGaurd/auth-gaurd.service';
 
 const routes: Routes = [
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
   },
   {
     path:"dashboard",
-    component:DashboardLayoutComponent,
+    component:DashboardLayoutComponent,canActivate:[AuthGardService],
     children:[{
       path:"notes",
       component:NotesContainerComponent
