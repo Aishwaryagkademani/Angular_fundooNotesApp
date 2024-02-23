@@ -1,5 +1,5 @@
 <mat-drawer-container  [hasBackdrop]="false" >
-    <mat-drawer #drawer [mode]="'over'" [opened]="drawerState" >
+    <mat-drawer #drawer [mode]="'over'" [opened]="drawerState"  >
         <div class="sidenav-container">
         <div class="icons">
             <mat-icon svgIcon="note-icon" aria-hidden="false" aria-label="note SVG icon"></mat-icon>
@@ -13,7 +13,7 @@
 
         <div class="icons">
             <mat-icon svgIcon="edit-icon" aria-hidden="false" aria-label="edit SVG icon"></mat-icon>
-            <span routerLink="">Archive</span>
+            <span routerLink="">Edit</span>
         </div>
 
         <div class="icons">
@@ -23,7 +23,7 @@
 
         <div class="icons">
             <mat-icon svgIcon="bin-icon" aria-hidden="false" aria-label="bin SVG icon"></mat-icon>
-            <span routerLink="">Trash</span>
+            <span routerLink="/dashboard/trash">Trash</span>
         </div >
     </div>
     </mat-drawer>

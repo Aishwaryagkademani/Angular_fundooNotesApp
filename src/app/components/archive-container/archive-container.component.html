@@ -1,1 +1,5 @@
-<p>archive-container works!</p>
+<div class="note-container">  
+    <div *ngFor=" let note of notesList" style="display: inline-block;flex-wrap: wrap; "  >    
+        <app-notes-card [container]="'archive'" [noteDetails]="note" (updateList)="updateNotesList($event)" ></app-notes-card>
+    </div>
+</div>

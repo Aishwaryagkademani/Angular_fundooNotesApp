@@ -8,6 +8,7 @@
     gap: 15px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     margin: 10px;
+    margin-bottom: 0px;
 }
 
 .note-container:hover{
@@ -36,11 +37,13 @@ box-shadow: 0px 0px 1px 3px   rgba(206, 201, 201, 0.45),
 .icons{
     // border: 1px solid black ;
     display: flex;
+    align-items: center;
     gap:18px;
     mat-icon{
-        width: 16px;
+        width: 20px;
         height: 20px;
     }
+
 }
 
 .col1{

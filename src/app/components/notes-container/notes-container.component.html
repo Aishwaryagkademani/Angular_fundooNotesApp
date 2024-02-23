@@ -3,7 +3,8 @@
         <app-create-note class="create-container" (updateList)="updateNotesList($event)"></app-create-note>
       
         <div *ngFor=" let note of notesList" style="display: inline-block;flex-wrap: wrap; "  >    
-            <app-notes-card  [noteDetails]="note" (updateList)="updateNotesList($event)" ></app-notes-card>
+            <app-notes-card [container]="'notes'" [noteDetails]="note" (updateList)="updateNotesList($event)" ></app-notes-card>
         </div>
 </div>
 
+ 
