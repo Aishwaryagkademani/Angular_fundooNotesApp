@@ -1,5 +1,5 @@
 <mat-card class="note-container" [style.background-color]="noteDetails.color" >        
-    <span class="title">{{noteDetails.title}}</span>
+    <span class="title">{{noteDetails.title | uppercase}}</span>
     <span class="description">{{noteDetails.description}}</span>
     <div class="icons" *ngIf="container === 'notes' else archive">
        <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="remember SVG icon"></mat-icon>
@@ -46,7 +46,10 @@
 <div  >
   <ng-template  #archive  class="icons">
     <div class="icons" *ngIf="container === 'archive' else trash" >
+      <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="remember SVG icon"></mat-icon>
+       <mat-icon svgIcon="collaborator-icon" aria-hidden="false" aria-label="collaborator SVG icon"></mat-icon>
       <mat-icon svgIcon="color-plate-icon" [matMenuTriggerFor]="colorMenu" aria-hidden="false" aria-label="color plate SVG icon"></mat-icon>
+      <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="img SVG icon"></mat-icon>
        <mat-icon style="height: 25px;width: 25px;" svgIcon="unarchive-icon" aria-hidden="false" aria-label="unarchive SVG icon" (click)="handleNoteCardIconsClick('archive')"></mat-icon>
        <mat-icon svgIcon="more-icon" aria-hidden="false" [matMenuTriggerFor]="moreMenu" aria-label="more SVG icon"></mat-icon>
     </div>
